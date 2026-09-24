@@ -1,0 +1,1523 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ZERO FEAR | Free Fire Guild</title>
+
+    <!-- Gaming Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 0, 60, 0.13), transparent 30%),
+                radial-gradient(circle at 80% 80%, rgba(0, 110, 255, 0.10), transparent 30%),
+                #05070d;
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 18px 7%;
+
+            background: rgba(5, 7, 13, 0.82);
+            backdrop-filter: blur(14px);
+
+            border-bottom: 1px solid rgba(255, 0, 60, 0.18);
+        }
+
+        .logo {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 23px;
+            font-weight: 900;
+            letter-spacing: 3px;
+            color: #fff;
+        }
+
+        .logo span {
+            color: #ff174f;
+            text-shadow: 0 0 15px rgba(255, 23, 79, 0.7);
+        }
+
+        nav a {
+            color: #ddd;
+            text-decoration: none;
+            margin-left: 28px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #ff174f;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+            min-height: 90vh;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 80px 20px;
+
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+
+            width: 500px;
+            height: 500px;
+
+            background: rgba(255, 0, 60, 0.08);
+            filter: blur(100px);
+
+            border-radius: 50%;
+
+            z-index: -1;
+        }
+
+        .tag {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff174f;
+            letter-spacing: 5px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(55px, 10vw, 130px);
+
+            font-weight: 900;
+            letter-spacing: 8px;
+
+            color: white;
+
+            text-shadow:
+                0 0 10px rgba(255, 255, 255, 0.2),
+                0 0 35px rgba(255, 0, 60, 0.4);
+        }
+
+        .hero p {
+            max-width: 650px;
+            margin-top: 20px;
+
+            color: #aaa;
+            font-size: 19px;
+
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 35px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            font-family: 'Orbitron', sans-serif;
+
+            padding: 14px 25px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 1px;
+
+            cursor: pointer;
+
+            transition: 0.3s;
+        }
+
+        .btn-primary {
+            background: #ff174f;
+            color: white;
+
+            box-shadow: 0 0 25px rgba(255, 23, 79, 0.35);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 35px rgba(255, 23, 79, 0.65);
+        }
+
+        .btn-secondary {
+            border: 1px solid #444;
+            color: white;
+            background: rgba(255,255,255,0.03);
+        }
+
+        .btn-secondary:hover {
+            border-color: #ff174f;
+            color: #ff174f;
+        }
+
+        /* ================= STATS ================= */
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+
+            flex-wrap: wrap;
+
+            padding: 30px 7%;
+        }
+
+        .stat {
+            min-width: 180px;
+
+            background: rgba(255,255,255,0.03);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+
+            padding: 25px;
+
+            text-align: center;
+
+            backdrop-filter: blur(10px);
+        }
+
+        .stat h2 {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff174f;
+            font-size: 30px;
+        }
+
+        .stat p {
+            color: #aaa;
+            margin-top: 5px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        /* ================= GUILD WAR ================= */
+
+        .guild-war-section {
+            padding: 90px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title h2 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: clamp(28px, 5vw, 45px);
+            letter-spacing: 3px;
+        }
+
+        .section-title span {
+            color: #ff174f;
+        }
+
+        .section-title p {
+            color: #888;
+            margin-top: 10px;
+            font-size: 17px;
+        }
+
+        .war-card {
+            max-width: 1050px;
+            margin: auto;
+
+            padding: 45px 35px;
+
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(255, 23, 79, 0.10),
+                    rgba(10, 15, 30, 0.8)
+                );
+
+            border: 1px solid rgba(255, 23, 79, 0.3);
+
+            box-shadow:
+                0 0 50px rgba(255, 23, 79, 0.08),
+                inset 0 0 40px rgba(255,255,255,0.015);
+
+            text-align: center;
+
+            position: relative;
+            overflow: hidden;
+        }
+
+        .war-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            background: rgba(255, 23, 79, 0.12);
+
+            filter: blur(70px);
+
+            top: -100px;
+            right: -100px;
+        }
+
+        .war-label {
+            font-family: 'Orbitron', sans-serif;
+
+            color: #ff174f;
+
+            letter-spacing: 4px;
+            font-size: 13px;
+
+            margin-bottom: 12px;
+        }
+
+        .war-card h3 {
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(25px, 5vw, 42px);
+
+            margin-bottom: 10px;
+
+            letter-spacing: 2px;
+        }
+
+        .war-status {
+            color: #aaa;
+            margin-bottom: 30px;
+            font-size: 17px;
+        }
+
+        /* COUNTDOWN */
+
+        .countdown {
+            display: grid;
+
+            grid-template-columns: repeat(4, 1fr);
+
+            gap: 15px;
+
+            max-width: 700px;
+
+            margin: 30px auto;
+        }
+
+        .time-box {
+            padding: 20px 10px;
+
+            background: rgba(0,0,0,0.35);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 12px;
+        }
+
+        .time-box strong {
+            display: block;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: clamp(25px, 5vw, 45px);
+
+            color: white;
+
+            text-shadow: 0 0 15px rgba(255,23,79,0.5);
+        }
+
+        .time-box span {
+            color: #777;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 2px;
+        }
+
+        .war-live {
+            color: #00ff88 !important;
+
+            text-shadow: 0 0 15px rgba(0,255,136,0.5);
+        }
+
+        /* WAR INFO */
+
+        .war-info {
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 15px;
+
+            margin-top: 35px;
+        }
+
+        .war-info-box {
+            padding: 20px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.06);
+
+            border-radius: 10px;
+        }
+
+        .war-info-box .icon {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .war-info-box h4 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 14px;
+            margin-bottom: 7px;
+        }
+
+        .war-info-box p {
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* ================= MEMBERS ================= */
+
+        .members-section {
+            padding: 90px 7%;
+        }
+
+        .member-form {
+            max-width: 950px;
+
+            margin: auto;
+
+            padding: 30px;
+
+            background: rgba(255,255,255,0.025);
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 15px;
+        }
+
+        .form-grid {
+            display: grid;
+
+            grid-template-columns: repeat(2, 1fr);
+
+            gap: 15px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            color: #999;
+            font-size: 13px;
+            margin-bottom: 7px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 13px 14px;
+
+            background: #0b0f18;
+
+            border: 1px solid #252b37;
+
+            border-radius: 7px;
+
+            color: white;
+
+            font-family: 'Rajdhani', sans-serif;
+
+            font-size: 16px;
+
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            border-color: #ff174f;
+
+            box-shadow: 0 0 12px rgba(255,23,79,0.15);
+        }
+
+        .form-button {
+            width: 100%;
+
+            margin-top: 20px;
+
+            border: none;
+        }
+
+        /* ================= SEARCH ================= */
+
+        .search-box {
+            max-width: 700px;
+            margin: 40px auto 30px;
+        }
+
+        .search-box input {
+            width: 100%;
+
+            padding: 15px 18px;
+
+            border-radius: 9px;
+
+            background: #0b0f18;
+
+            border: 1px solid #252b37;
+
+            color: white;
+
+            font-family: 'Rajdhani', sans-serif;
+
+            font-size: 17px;
+
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: #ff174f;
+        }
+
+        /* ================= MEMBER GRID ================= */
+
+        .member-grid {
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+
+            gap: 20px;
+
+            margin-top: 30px;
+        }
+
+        .member-card {
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(255,255,255,0.045),
+                    rgba(255,255,255,0.015)
+                );
+
+            border: 1px solid rgba(255,255,255,0.08);
+
+            border-radius: 14px;
+
+            padding: 25px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            transition: 0.3s;
+        }
+
+        .member-card:hover {
+            transform: translateY(-5px);
+
+            border-color: rgba(255,23,79,0.5);
+
+            box-shadow: 0 15px 40px rgba(255,23,79,0.08);
+        }
+
+        .member-avatar {
+            width: 55px;
+            height: 55px;
+
+            border-radius: 50%;
+
+            background: linear-gradient(135deg, #ff174f, #7a001f);
+
+            display: flex;
+
+            align-items: center;
+            justify-content: center;
+
+            font-family: 'Orbitron', sans-serif;
+
+            font-weight: 900;
+
+            font-size: 20px;
+
+            margin-bottom: 15px;
+        }
+
+        .member-name {
+            font-family: 'Orbitron', sans-serif;
+
+            font-size: 18px;
+
+            font-weight: 700;
+
+            margin-bottom: 5px;
+        }
+
+        .member-role {
+            color: #ff174f;
+
+            font-size: 13px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+        }
+
+        .member-info {
+            margin-top: 18px;
+
+            padding-top: 15px;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .member-info p {
+            color: #999;
+            font-size: 14px;
+            margin: 5px 0;
+        }
+
+        .member-info strong {
+            color: #ddd;
+        }
+
+        .playstyle {
+            display: inline-block;
+
+            margin-top: 10px;
+
+            padding: 5px 9px;
+
+            background: rgba(255,23,79,0.08);
+
+            border: 1px solid rgba(255,23,79,0.2);
+
+            border-radius: 5px;
+
+            color: #ff6687;
+
+            font-size: 12px;
+
+            font-weight: 700;
+        }
+
+        .status {
+            color: #00e676 !important;
+        }
+
+        .remove-btn {
+            position: absolute;
+
+            top: 15px;
+            right: 15px;
+
+            border: none;
+
+            background: rgba(255,255,255,0.05);
+
+            color: #777;
+
+            padding: 6px 8px;
+
+            border-radius: 5px;
+
+            cursor: pointer;
+
+            transition: 0.2s;
+        }
+
+        .remove-btn:hover {
+            color: #ff174f;
+            background: rgba(255,23,79,0.1);
+        }
+
+        .empty {
+            text-align: center;
+
+            color: #666;
+
+            padding: 50px;
+
+            grid-column: 1 / -1;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            padding: 40px 7%;
+
+            text-align: center;
+
+            border-top: 1px solid rgba(255,255,255,0.06);
+
+            color: #666;
+        }
+
+        footer strong {
+            font-family: 'Orbitron', sans-serif;
+            color: #ff174f;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width: 700px) {
+
+            nav {
+                padding: 15px 5%;
+            }
+
+            nav a {
+                display: none;
+            }
+
+            .hero {
+                min-height: 80vh;
+            }
+
+            .hero h1 {
+                letter-spacing: 4px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .countdown {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .war-info {
+                grid-template-columns: 1fr;
+            }
+
+            .stats {
+                padding: 20px 5%;
+            }
+
+            .stat {
+                min-width: 140px;
+                padding: 18px;
+            }
+
+            .guild-war-section,
+            .members-section {
+                padding: 70px 5%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<nav>
+
+    <div class="logo">
+        ZERO <span>FEAR</span>
+    </div>
+
+    <div>
+        <a href="#home">HOME</a>
+        <a href="#guildwar">GUILD WAR</a>
+        <a href="#members">MEMBERS</a>
+    </div>
+
+</nav>
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="tag">
+        FREE FIRE GUILD
+    </div>
+
+    <h1>ZERO FEAR</h1>
+
+    <p>
+        No fear. No limits. One squad.
+        Welcome to the official ZERO FEAR guild hub.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="#members" class="btn btn-primary">
+            JOIN THE GUILD
+        </a>
+
+        <a href="#guildwar" class="btn btn-secondary">
+            GUILD WAR
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ================= STATS ================= -->
+
+<section class="stats">
+
+    <div class="stat">
+        <h2 id="memberCount">0</h2>
+        <p>GUILD MEMBERS</p>
+    </div>
+
+    <div class="stat">
+        <h2>FF</h2>
+        <p>BATTLE ROYALE</p>
+    </div>
+
+    <div class="stat">
+        <h2>∞</h2>
+        <p>FEAR LEVEL</p>
+    </div>
+
+</section>
+
+
+<!-- ================= GUILD WAR ================= -->
+
+<section class="guild-war-section" id="guildwar">
+
+    <div class="section-title">
+
+        <h2>
+            <span>GUILD</span> WAR
+        </h2>
+
+        <p>
+            Prepare ZERO FEAR for the next weekly Guild War.
+        </p>
+
+    </div>
+
+
+    <div class="war-card">
+
+        <div class="war-label">
+            NEXT BATTLE
+        </div>
+
+        <h3 id="warTitle">
+            SATURDAY GUILD WAR
+        </h3>
+
+        <p class="war-status" id="warStatus">
+            Countdown to the next Guild War window
+        </p>
+
+
+        <!-- COUNTDOWN -->
+
+        <div class="countdown">
+
+            <div class="time-box">
+                <strong id="days">00</strong>
+                <span>DAYS</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="hours">00</strong>
+                <span>HOURS</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="minutes">00</strong>
+                <span>MINUTES</span>
+            </div>
+
+            <div class="time-box">
+                <strong id="seconds">00</strong>
+                <span>SECONDS</span>
+            </div>
+
+        </div>
+
+
+        <!-- GUILD WAR INFORMATION -->
+
+        <div class="war-info">
+
+            <div class="war-info-box">
+
+                <div class="icon">⚔️</div>
+
+                <h4>BATTLE ROYALE</h4>
+
+                <p>
+                    Guild Wars are played in Battle Royale mode.
+                </p>
+
+            </div>
+
+
+            <div class="war-info-box">
+
+                <div class="icon">👥</div>
+
+                <h4>GUILD SQUAD</h4>
+
+                <p>
+                    Team members must belong to the same guild.
+                </p>
+
+            </div>
+
+
+            <div class="war-info-box">
+
+                <div class="icon">🏆</div>
+
+                <h4>TOP 5 SCORES</h4>
+
+                <p>
+                    Only the five highest match scores count toward the guild total.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= MEMBERS ================= -->
+
+<section class="members-section" id="members">
+
+    <div class="section-title">
+
+        <h2>
+            <span>GUILD</span> MEMBERS
+        </h2>
+
+        <p>
+            Add and manage ZERO FEAR members.
+        </p>
+
+    </div>
+
+
+    <!-- MEMBER FORM -->
+
+    <div class="member-form">
+
+        <div class="form-grid">
+
+            <div class="form-group">
+
+                <label>
+                    FREE FIRE USERNAME
+                </label>
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Enter username"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    UID
+                </label>
+
+                <input
+                    type="text"
+                    id="uid"
+                    placeholder="Enter Free Fire UID"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    GUILD ROLE
+                </label>
+
+                <select id="role">
+
+                    <option value="Member">
+                        Member
+                    </option>
+
+                    <option value="Elite Member">
+                        Elite Member
+                    </option>
+
+                    <option value="Officer">
+                        Officer
+                    </option>
+
+                    <option value="Co-Leader">
+                        Co-Leader
+                    </option>
+
+                    <option value="Leader">
+                        Leader
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    PLAYSTYLE
+                </label>
+
+                <select id="playstyle">
+
+                    <option value="Sniper">
+                        🎯 Sniper
+                    </option>
+
+                    <option value="Rusher">
+                        ⚡ Rusher
+                    </option>
+
+                    <option value="Supporter">
+                        🛡️ Supporter
+                    </option>
+
+                    <option value="Camper">
+                        🏕️ Camper
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="btn btn-primary form-button"
+            onclick="addMember()"
+        >
+            + ADD MEMBER
+        </button>
+
+    </div>
+
+
+    <!-- SEARCH -->
+
+    <div class="search-box">
+
+        <input
+            type="text"
+            id="search"
+            placeholder="Search guild members..."
+            oninput="displayMembers()"
+        >
+
+    </div>
+
+
+    <!-- MEMBER GRID -->
+
+    <div
+        class="member-grid"
+        id="memberGrid"
+    ></div>
+
+</section>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+    <p>
+        <strong>ZERO FEAR</strong>
+        — Free Fire Guild
+    </p>
+
+    <p style="margin-top:8px;">
+        Fear is optional. Victory isn't.
+    </p>
+
+</footer>
+
+
+<script>
+
+    /* =========================================================
+       ZERO FEAR GUILD WAR TIMER
+       =========================================================
+
+       Current timer:
+       Saturday at 8:00 PM IST
+
+       If your actual Guild War starts at another time,
+       change WAR_HOUR below.
+
+       20 = 8:00 PM
+       19 = 7:00 PM
+       21 = 9:00 PM
+
+       Saturday = 6
+       Sunday = 0
+    ========================================================= */
+
+    const WAR_DAY = 6;
+    const WAR_HOUR = 20;
+    const WAR_MINUTE = 0;
+
+
+    function getNextGuildWar() {
+
+        const now = new Date();
+
+        const target = new Date(now);
+
+        let daysUntil = WAR_DAY - now.getDay();
+
+        if (daysUntil < 0) {
+            daysUntil += 7;
+        }
+
+        target.setDate(now.getDate() + daysUntil);
+
+        target.setHours(
+            WAR_HOUR,
+            WAR_MINUTE,
+            0,
+            0
+        );
+
+        /*
+            If today's Guild War time has already passed,
+            move to next Saturday.
+        */
+
+        if (target <= now) {
+
+            target.setDate(
+                target.getDate() + 7
+            );
+
+        }
+
+        return target;
+    }
+
+
+    function updateGuildWarTimer() {
+
+        const now = new Date();
+
+        const target = getNextGuildWar();
+
+        const difference = target - now;
+
+
+        if (difference <= 0) {
+
+            document.getElementById("warStatus").innerText =
+                "⚔️ GUILD WAR IS LIVE! ⚔️";
+
+            document.getElementById("warStatus")
+                .classList.add("war-live");
+
+            return;
+
+        }
+
+
+        const days = Math.floor(
+            difference / (1000 * 60 * 60 * 24)
+        );
+
+        const hours = Math.floor(
+            (difference / (1000 * 60 * 60)) % 24
+        );
+
+        const minutes = Math.floor(
+            (difference / (1000 * 60)) % 60
+        );
+
+        const seconds = Math.floor(
+            (difference / 1000) % 60
+        );
+
+
+        document.getElementById("days").innerText =
+            String(days).padStart(2, "0");
+
+        document.getElementById("hours").innerText =
+            String(hours).padStart(2, "0");
+
+        document.getElementById("minutes").innerText =
+            String(minutes).padStart(2, "0");
+
+        document.getElementById("seconds").innerText =
+            String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateGuildWarTimer();
+
+    setInterval(
+        updateGuildWarTimer,
+        1000
+    );
+
+
+    /* =========================================================
+       MEMBER SYSTEM
+    ========================================================= */
+
+    let members =
+        JSON.parse(
+            localStorage.getItem("zeroFearMembers")
+        ) || [];
+
+
+    function saveMembers() {
+
+        localStorage.setItem(
+            "zeroFearMembers",
+            JSON.stringify(members)
+        );
+
+    }
+
+
+    function escapeHTML(value) {
+
+        return String(value)
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+
+    }
+
+
+    function getPlaystyleIcon(playstyle) {
+
+        const icons = {
+
+            "Sniper": "🎯",
+
+            "Rusher": "⚡",
+
+            "Supporter": "🛡️",
+
+            "Camper": "🏕️"
+
+        };
+
+        return icons[playstyle] || "🎮";
+
+    }
+
+
+    function addMember() {
+
+        const username =
+            document.getElementById("username")
+                .value.trim();
+
+        const uid =
+            document.getElementById("uid")
+                .value.trim();
+
+        const role =
+            document.getElementById("role")
+                .value;
+
+        const playstyle =
+            document.getElementById("playstyle")
+                .value;
+
+
+        if (!username || !uid) {
+
+            alert(
+                "Please enter both username and UID."
+            );
+
+            return;
+
+        }
+
+
+        const duplicate =
+            members.some(
+                member => member.uid === uid
+            );
+
+
+        if (duplicate) {
+
+            alert(
+                "This UID is already in the guild."
+            );
+
+            return;
+
+        }
+
+
+        const member = {
+
+            id: Date.now(),
+
+            username: username,
+
+            uid: uid,
+
+            role: role,
+
+            playstyle: playstyle
+
+        };
+
+
+        members.push(member);
+
+        saveMembers();
+
+        displayMembers();
+
+
+        document.getElementById("username")
+            .value = "";
+
+        document.getElementById("uid")
+            .value = "";
+
+        document.getElementById("role")
+            .value = "Member";
+
+        document.getElementById("playstyle")
+            .value = "Sniper";
+
+    }
+
+
+    function removeMember(id) {
+
+        members =
+            members.filter(
+                member => member.id !== id
+            );
+
+        saveMembers();
+
+        displayMembers();
+
+    }
+
+
+    function displayMembers() {
+
+        const grid =
+            document.getElementById("memberGrid");
+
+        const search =
+            document.getElementById("search")
+                .value
+                .toLowerCase()
+                .trim();
+
+
+        const filtered =
+            members.filter(member => {
+
+                return (
+
+                    member.username
+                        .toLowerCase()
+                        .includes(search)
+
+                    ||
+
+                    member.uid
+                        .toLowerCase()
+                        .includes(search)
+
+                    ||
+
+                    member.role
+                        .toLowerCase()
+                        .includes(search)
+
+                    ||
+
+                    (member.playstyle || "")
+                        .toLowerCase()
+                        .includes(search)
+
+                );
+
+            });
+
+
+        document.getElementById("memberCount")
+            .innerText = members.length;
+
+
+        if (filtered.length === 0) {
+
+            grid.innerHTML = `
+                <div class="empty">
+                    NO GUILD MEMBERS FOUND
+                </div>
+            `;
+
+            return;
+
+        }
+
+
+        grid.innerHTML =
+            filtered.map(member => {
+
+                const playstyle =
+                    member.playstyle || "Sniper";
+
+                const icon =
+                    getPlaystyleIcon(playstyle);
+
+
+                return `
+
+                    <div class="member-card">
+
+                        <button
+                            class="remove-btn"
+                            onclick="removeMember(${member.id})"
+                            title="Remove member"
+                        >
+                            ✕
+                        </button>
+
+
+                        <div class="member-avatar">
+                            ${escapeHTML(
+                                member.username
+                                    .charAt(0)
+                                    .toUpperCase()
+                            )}
+                        </div>
+
+
+                        <div class="member-name">
+                            ${escapeHTML(member.username)}
+                        </div>
+
+
+                        <div class="member-role">
+                            ${escapeHTML(member.role)}
+                        </div>
+
+
+                        <div class="member-info">
+
+                            <p>
+                                UID:
+                                <strong>
+                                    ${escapeHTML(member.uid)}
+                                </strong>
+                            </p>
+
+
+                            <p>
+                                STATUS:
+                                <strong class="status">
+                                    ONLINE READY
+                                </strong>
+                            </p>
+
+
+                            <span class="playstyle">
+                                ${icon}
+                                ${escapeHTML(playstyle)}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                `;
+
+            }).join("");
+
+    }
+
+
+    displayMembers();
+
+</script>
+
+</body>
+</html>
+```
